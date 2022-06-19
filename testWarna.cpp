@@ -17,7 +17,7 @@ void lcd_kat_segar() {
         Serial.println("TYPE: " + fbdo.dataType());
     } else {
         Serial.println("Data Kategori Gagal Dikirim");
-        Serial.println(fbdo.errorReason);
+        Serial.println(fbdo.errorReason());
     }
     lcd.setCursor(0,0);
     lcd.print("    Kategori    ");
@@ -32,7 +32,7 @@ void lcd_kat_busuk() {
         Serial.println("TYPE: " + fbdo.dataType());
     } else {
         Serial.println("Data Kategori Gagal Dikirim");
-        Serial.println(fbdo.errorReason);
+        Serial.println(fbdo.errorReason());
     }
     lcd.setCursor(0,0);
     lcd.print("    Kategori    ");
