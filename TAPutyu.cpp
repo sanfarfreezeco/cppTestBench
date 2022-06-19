@@ -28,12 +28,32 @@ void lcd_kat_busuk() {
     lcd.print("     Busuk      ");
 }
 
+/*
 void kategori() {
     if (ph_last >= 5.4 && outputValue_last >= 1.78) {
         if (ph_last <= 5.8 && outputValue <= 1.9) {
             lcd_kat_segar();
         } else {
             lcd_kat_busuk();
+        }
+    } else {
+        lcd_kat_busuk();
+    }
+}
+*/
+
+void kategori() {
+    if (ph_last >= 5.4) {
+        if (ph_last <= 5.8) {
+            lcd_kat_segar();
+        } else {
+            return;
+        }
+    } else if (outputValue_last >= 1.78) {
+        if (outputValue_last <= 1.9) {
+            lcd_kat_segar();
+        } else {
+            return;
         }
     } else {
         lcd_kat_busuk();
@@ -65,7 +85,7 @@ void kat_warna() {
 }
 
 /*
-void kat_warna1() {
+void kat_warna() {
     if (nilair >= 50 && nilaig >= 125 && nilaib >= 100) {
         if (nilair <= 87 && nilaig <= 212 && nilaib <= 181) {
             kategori();
