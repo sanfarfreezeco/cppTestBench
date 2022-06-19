@@ -40,18 +40,6 @@ void kategori() {
     }
 }
 
-void kat_warna1() {
-    if (nilair >= 50 && nilaig >= 125 && nilaib >= 100) {
-        if (nilair <= 87 && nilaig <= 212 && nilaib <= 181) {
-            kategori();
-        } else {
-            lcd_kat_busuk();
-        }
-    } else {
-        lcd_kat_busuk();
-    }
-}
-
 void kat_warna() {
     if (nilair >= 50 && nilaig >= 125){
         if (nilair <= 87 && nilaig <= 212) {
@@ -75,3 +63,17 @@ void kat_warna() {
         lcd_kat_busuk();
     }
 }
+
+/*
+void kat_warna1() {
+    if (nilair >= 50 && nilaig >= 125 && nilaib >= 100) {
+        if (nilair <= 87 && nilaig <= 212 && nilaib <= 181) {
+            kategori();
+        } else {
+            lcd_kat_busuk();
+        }
+    } else {
+        lcd_kat_busuk();
+    }
+}
+*/
