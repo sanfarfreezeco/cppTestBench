@@ -39,3 +39,15 @@ void lcd_kat_busuk() {
     lcd.setCursor(0,1);
     lcd.print("     Busuk      ");
 }
+
+void kat_warna() {
+    if (nilair >= 50 && nilaig >= 125 && nilaib >= 100) {
+        if (nilair <= 87 && nilaig <= 212 && nilaib <= 181) {
+            kategori();
+        } else {
+            lcd_kat_busuk();
+        }
+    } else {
+        lcd_kat_busuk();
+    }
+}
