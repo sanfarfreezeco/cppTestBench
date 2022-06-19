@@ -40,12 +40,36 @@ void kategori() {
     }
 }
 
-void kat_warna() {
+void kat_warna1() {
     if (nilair >= 50 && nilaig >= 125 && nilaib >= 100) {
         if (nilair <= 87 && nilaig <= 212 && nilaib <= 181) {
             kategori();
         } else {
             lcd_kat_busuk();
+        }
+    } else {
+        lcd_kat_busuk();
+    }
+}
+
+void kat_warna() {
+    if (nilair >= 50 && nilaig >= 125){
+        if (nilair <= 87 && nilaig <= 212) {
+            kategori();
+        } else {
+            return;
+        }
+    } else if (nilair >= 50 && nilaib >= 100){
+        if (nilair <= 87 && nilaig <= 181) {
+            kategori();
+        } else {
+            return;
+        }
+    } else if (nilaig >= 125 && nilaib >= 100){
+        if (nilair <= 212 && nilaig <= 181) {
+            kategori();
+        } else {
+            return;
         }
     } else {
         lcd_kat_busuk();
