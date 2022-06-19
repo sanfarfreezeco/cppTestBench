@@ -3,4 +3,4 @@ project(cppTestBench)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cppTestBench main.cpp)
+add_executable(cppTestBench main.cpp testWarna.cpp)
