@@ -1,15 +1,3 @@
-void kategori() {
-    if (ph_last >= 5.4 && outputValue_last >= 1.78) {
-        if (ph_last <= 5.8 && outputValue <= 1.9) {
-            lcd_kat_segar();
-        } else {
-            lcd_kat_busuk();
-        }
-    } else {
-        lcd_kat_busuk();
-    }
-}
-
 void lcd_kat_segar() {
     if (Firebase.RTDB.setString(&fbdo, "test/kategori", "Segar")) {
         Serial.println("Data Kategori Berhasil Dikirim");
@@ -38,6 +26,18 @@ void lcd_kat_busuk() {
     lcd.print("    Kategori    ");
     lcd.setCursor(0,1);
     lcd.print("     Busuk      ");
+}
+
+void kategori() {
+    if (ph_last >= 5.4 && outputValue_last >= 1.78) {
+        if (ph_last <= 5.8 && outputValue <= 1.9) {
+            lcd_kat_segar();
+        } else {
+            lcd_kat_busuk();
+        }
+    } else {
+        lcd_kat_busuk();
+    }
 }
 
 void kat_warna() {
